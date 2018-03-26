@@ -12,5 +12,11 @@ module pili {
 			let fillLen: number = fillStr.length;
 			return len >= fillLen ? strOri : isPre ? fillStr.substring(0, fillLen - len) + strOri : strOri + fillStr.substring(len);
 		}
+		
+		/**将html文本转成textFlow可用的格式*/
+		public static getTextFlow(str: string): egret.ITextElement[] {
+			let styleParser = new egret.HtmlTextParser();
+			return styleParser.;
+		}
 	}
 }

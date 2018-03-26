@@ -34,5 +34,17 @@ module pili {
 		public static getBetweenRandInt(min: number, max: number): number {
 			return Math.random() * (max - min) + min << 0;
 		}
+
+		/**获取随机颜色 */
+		public static getRandColor():number{
+			return ( Math.floor( Math.random() * 0xff ) << 16 )
+				+ ( Math.floor( Math.random() * 0xff ) << 8 )
+				+ Math.floor( Math.random() * 0xff ) ;
+    	}
+
+		/**判断值是否在范围内 */
+		public static isBetween(min:number, value:number, max:number):boolean{
+			return min <= value && value <= max;
+		}
 	}
 }

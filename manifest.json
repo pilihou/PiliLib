@@ -14,6 +14,8 @@
 		"bin-debug/Main.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/pili/ARR.js",
+		"bin-debug/pili/CustomEffect.js",
+		"bin-debug/pili/DATE.js",
 		"bin-debug/pili/NUM.js",
 		"bin-debug/pili/OBJ.js",
 		"bin-debug/pili/STR.js",
