@@ -12,6 +12,7 @@
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
+		"bin-debug/Test.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/pili/ARR.js",
 		"bin-debug/pili/CustomEffect.js",
@@ -19,6 +20,7 @@
 		"bin-debug/pili/NUM.js",
 		"bin-debug/pili/OBJ.js",
 		"bin-debug/pili/STR.js",
+		"bin-debug/pili/Utils.js",
 		"bin-debug/pili/VertialString.js"
 	]
 }

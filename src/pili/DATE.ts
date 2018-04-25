@@ -43,19 +43,20 @@ module pili {
 		/**
 		 * 毫秒转换为 00:00:00
 		 * time 时间(毫秒)
+		 * isShowDay true天数大于零时显示x天xx:xx:xx，否则显示xx:xx:xx，false显示xx:xx:xx
 		 */
-		public static formatTime(time: number, type:number=1): string {
+		public static formatTime(time: number, isShowDay:boolean=true): string {
 			if (time < 0) {
 				time = 0;
 			}
 			let timeStr: string;
 			let day:number;
 			let hour:number;
-			if(type == 1){
-				hour = time / (60 * 60 * 1000) << 0;
-			}else if(type == 2){
+			if(isShowDay){
 				day = time / (24 * 60 * 60 * 1000) << 0;
 				hour = (time % (24 * 60 * 60 * 1000))/ (60 * 60 * 1000) <<0;
+			}else{
+				hour = time / (60 * 60 * 1000) << 0;
 			}
 			let minute = (time % (60 * 60 * 1000)) / (60 * 1000) << 0;
 			let second = (time % (60 * 1000)) / 1000 << 0;

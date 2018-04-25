@@ -210,6 +210,17 @@ class Main extends eui.UILayer {
         label.x = 10;
         label.y = 600;
         this.addChild(label);
+
+        let star:egret.Shape = new egret.Shape();
+        star.x = 200;
+        star.y = 200;
+        this.addChild(star);
+        pili.drawStar(star.graphics,30,80);
+        let sector:egret.Shape = new egret.Shape();
+        sector.x = 400;
+        sector.y = 200;
+        this.addChild(sector);
+        pili.drawSector(sector.graphics,80, 135);
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
@@ -261,6 +272,8 @@ class Main extends eui.UILayer {
         panel.title = "Title";
         panel.horizontalCenter = 0;
         panel.verticalCenter = 0;
-        this.addChild(panel);
+        //this.addChild(panel);
+        let test = new Test();
+        this.addChild(test);
     }
 }

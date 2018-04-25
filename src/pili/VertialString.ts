@@ -4,14 +4,14 @@ module pili {
          * 将文本转成竖向显示
          * @param str 文本内容
          * @param height 每列显示的字数
-         * @param tblTemplet 字间使用的分隔符模板索引（从0到2，默认：0）
+         * @param tblTemplet 字间使用的分隔符模板索引（从0到2，默认：0）0用空格相隔，1用竖线相隔，2用竖线相隔最后会多一竖
          * @param isTraditional 是否转换成繁体（默认：简体）
          * @param width 列数（默认：自动计算）
 		 * @returns 返回转换后的文本
          */
 		public static convert(str: string, height: number, tblTemplet: number = 0, isTraditional?: boolean, width?: number): string {
 			let self = this;
-			let tblChars = [[' ', ' ', ' '], ['│', '│', '│'], ['│', '│', '']];
+			let tblChars = [[' ', ' ', ' '],['│', '│', ''], ['│', '│', '│']];
 			str = str.replace(/\r/g, "");
 			if (str.length == 0) {
 				document.getElementById("str").focus();

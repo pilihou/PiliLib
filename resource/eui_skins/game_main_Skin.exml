@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="game_main_Skin" width="640" height="500" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="icon01" name="a_001_cy_png" source="a_001_cy_png" x="4" y="2"/>
+	<e:Image id="icon02" name="a_002_tp_png" source="a_002_tp_png" x="78" y="4"/>
+	<e:Image id="icon03" name="a_003_lh_png" source="a_003_lh_png" x="149" y="5"/>
+	<e:Image id="icon04" name="a_004_tx_png" source="a_004_tx_png" x="225" y="8"/>
+	<e:Image id="icon05" name="a_005_zj_png" source="a_005_zj_png" x="299" y="9"/>
+	<e:Image id="icon06" name="a_006_qiao_png" source="a_006_qiao_png" x="4" y="84"/>
+	<e:Image id="icon07" name="a_008_ch_png" source="a_007_ch_png" x="82" y="82"/>
+	<e:Label id="random" text="Label" x="16" anchorOffsetX="0" width="608" anchorOffsetY="0" top="294" bottom="10"/>
+	<e:EditableText id="text" width="540" height="182" text="Label" x="20" y="180" anchorOffsetY="0"/>
+	<e:Image id="icon08" source="a_008_zt_png" x="159" y="86"/>
+</e:Skin>
