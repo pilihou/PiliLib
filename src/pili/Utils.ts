@@ -92,4 +92,18 @@ module pili {
 		}
 		return obj;
 	}
+
+	/**
+	 * 复制文本到剪切板
+	 * @param message 要复制的文本
+	 */
+	export function copy(message:string){
+        let input = document.createElement("input");
+        input.value = message;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length);
+        document.execCommand('Copy');
+        document.body.removeChild(input);
+	}
 }
