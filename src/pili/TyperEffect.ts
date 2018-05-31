@@ -1,30 +1,25 @@
 module pili {
 	/**
-	 * 用例：pili.CustomEffect.instance.typerEffect(aaa, "这是一个字符串");
-	 * pili.CustomEffect.instance.destroyTyperEffect();
+	 * 用例：let typerEffect = new pili.TyperEffect(aaa, "这是一个字符串");
+	 * typerEffect.destroy();
 	 */
-	export class CustomEffect {
-		private static _instance:pili.CustomEffect;
+	export class TyperEffect {
 		private arrTyperTimeId: number[];
-		public static get instance():pili.CustomEffect{
-			if(!this._instance) this._instance = new pili.CustomEffect();
-			return this._instance;
-		}
 		/**
 		* 文字打字机效果
-		* obj 文本对象
+		* label 文本对象
 		* content 文字
 		* interval 打字间隔 毫秒
 		* backFun 打字动画完成回调
 		*/
-		public typerEffect(obj, content: string = "", interval: number = 200, backFun: Function = null): void {
+		public constructor(label: eui.Label | egret.TextField, content: string = "", interval: number = 200, backFun: Function = null) {
 			this.arrTyperTimeId = [];
 			let strArr: Array<any> = content.split("");
 			let len: number = strArr.length;
 			for (let i = 0; i < len; i++) {
 				let timeId = egret.setTimeout(function () {
 					egret.clearTimeout(timeId);
-					obj.appendText(strArr[Number(this)]);
+					label.appendText(strArr[Number(this)]);
 					if ((Number(this) >= len - 1) && (backFun != null)) {
 						backFun();
 					}
@@ -32,9 +27,9 @@ module pili {
 				this.arrTyperTimeId.push(timeId);
 			}
 		}
-		
+
 		/**销毁打字机效果 */
-		public destroyTyperEffect() {
+		public destroy() {
 			if (this.arrTyperTimeId) {
 				for (let i: number = 0, len: number = this.arrTyperTimeId.length; i < len; i++) {
 					if (this.arrTyperTimeId[i]) {

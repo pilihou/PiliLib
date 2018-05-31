@@ -137,6 +137,7 @@ class Main extends eui.UILayer {
         }
     }
     private textfield: egret.TextField;
+    panel;
     /**
      * 创建场景界面
      * Create scene interface
@@ -211,6 +212,13 @@ class Main extends eui.UILayer {
         label.y = 600;
         this.addChild(label);
 
+         let panel = new eui.Label();
+        panel.text = "aaa";
+        panel.horizontalCenter = 0;
+        panel.y = 300;
+        this.addChild(panel);
+        this.panel = panel;
+
         let star:egret.Shape = new egret.Shape();
         star.x = 200;
         star.y = 200;
@@ -268,12 +276,10 @@ class Main extends eui.UILayer {
      * Click the button
      */
     private onButtonClick(e: egret.TouchEvent) {
-        let panel = new eui.Panel();
-        panel.title = "Title";
-        panel.horizontalCenter = 0;
-        panel.verticalCenter = 0;
-        //this.addChild(panel);
+       
+        let numEffect:pili.NumberEffect = new pili.NumberEffect(this.panel, 2, 20);
         let test = new Test();
-        this.addChild(test);
+        //this.addChild(test);
+        
     }
 }

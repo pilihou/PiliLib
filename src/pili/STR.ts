@@ -47,5 +47,43 @@ module pili {
             }
             return targetString.substring(0, i + 1);
         }
+		
+		/**
+		* 将转换数字为xx万,xx亿（采用截掉保留小数位数之后的数值）
+		* @param num 要转换的值
+		* @param {number} fix 保留几位小数，默认1位
+		* @param {number} power 大于等于这个数量级开始转换，如大于等于100000开始转，这里传5
+		* @returns {string}
+		*/
+		public function formatNumByType2(num:number, fix:number=1, power:number=0):string {
+			//亿 万亿 兆 万兆
+			if(num<Math.pow(10, power){
+				return toFixed(num, fix);
+			}
+			let unit = ["万", "亿", "兆", "万兆", "亿兆"];
+			let powArrs = [4, 8, 12, 16, 20];
+			let strNum;
+			for (let i = powArrs.length - 1; i >= 0; i--) {
+				let n = Math.pow(10, powArrs[i]);
+				if (num >= n) {
+					strNum = toFixed(num/n, fix);
+					return strNum + unit[i];
+				}
+			}
+		}
+
+		public static function toFixed(num, fix):string{
+			let strNum = num+"";
+			if (fix == 0) {
+				strNum = strNum.split('.')[0];
+			}else{
+				if (strNum.indexOf(".") > 0) {
+					strNum = strNum.substr(0, strNum.indexOf(".") + fix+1);
+				} else {
+					strNum = strNum;
+				}
+			}
+			return strNum;
+		}
 	}
 }
