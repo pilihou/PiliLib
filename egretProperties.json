@@ -1,14 +1,10 @@
 {
-  "native": {
-    "path_ignore": []
-  },
-  "publish": {
-    "web": 0,
-    "native": 1,
-    "path": "bin-release"
-  },
-  "egret_version": "5.1.8",
+  "engineVersion": "5.2.1",
+  "compilerVersion": "5.2.1",
   "template": {},
+  "target": {
+    "current": "web"
+  },
   "eui": {
     "exmlRoot": [
       "resource/eui_skins"
@@ -16,7 +12,7 @@
     "themes": [
       "resource/default.thm.json"
     ],
-    "exmlPublishPolicy": "content"
+    "exmlPublishPolicy": "commonjs"
   },
   "modules": [
     {
@@ -26,7 +22,7 @@
       "name": "eui"
     },
     {
-      "name": "res"
+      "name": "assetsmanager"
     },
     {
       "name": "tween"
@@ -35,8 +31,7 @@
       "name": "game"
     },
     {
-      "name": "promise",
-      "path": "./promise"
+      "name": "promise"
     }
   ]
 }
