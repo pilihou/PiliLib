@@ -98,12 +98,12 @@ module pili {
      * @param arr {物品Id:数量,物品Id:数量,...}
      * @returns {number[][]} [[物品Id,数量],[物品Id,数量]...]
 	 */
-	export function itemObj2itemArr(obj):number[][]{
-		let idList:string[] = Object.keys(obj);
-		let itemArr:number[][] = [];
-		for (let i:number = 0, len:number = idList.length;i<len;i++){
-			let itemId:number = +idList[i];
-			itemArr.push([itemId,+obj[itemId]]);
+	export function itemObj2itemArr(obj): number[][] {
+		let idList: string[] = Object.keys(obj);
+		let itemArr: number[][] = [];
+		for (let i: number = 0, len: number = idList.length; i < len; i++) {
+			let itemId: number = +idList[i];
+			itemArr.push([itemId, +obj[itemId]]);
 		}
 		return itemArr;
 	}
@@ -112,14 +112,14 @@ module pili {
 	 * 复制文本到剪切板
 	 * @param message 要复制的文本
 	 */
-	export function copy(message:string){
-        let input = document.createElement("input");
-        input.value = message;
-        document.body.appendChild(input);
-        input.select();
-        input.setSelectionRange(0, input.value.length);
-        document.execCommand('Copy');
-        document.body.removeChild(input);
+	export function copy(message: string) {
+		let input = document.createElement("input");
+		input.value = message;
+		document.body.appendChild(input);
+		input.select();
+		input.setSelectionRange(0, input.value.length);
+		document.execCommand('Copy');
+		document.body.removeChild(input);
 	}
 
 	/**
@@ -127,21 +127,21 @@ module pili {
      * @param {eui.Scroller} scroller 滚动控制容器
      * @param {boolean} isBottom true滚到底部 false滚到右侧(默认值：滚到底部)
      */
-    export function moveScroller(scroller:eui.Scroller, isBottom:boolean=true){
-        if(!scroller) return;
-        scroller.viewport.validateNow();
-        if(isBottom){
-            if(scroller.viewport.contentHeight > scroller.height){
-                scroller.viewport.scrollV = scroller.viewport.contentHeight - scroller.height;
-            }else{
-                scroller.viewport.scrollV = 0;
-            }
-        }else{
-            if(scroller.viewport.contentWidth > scroller.width){
-                scroller.viewport.scrollH = scroller.viewport.contentWidth - scroller.width;
-            }else{
-                scroller.viewport.scrollH = 0;
-            }
-        }
-    }
+	export function moveScroller(scroller: eui.Scroller, isBottom: boolean = true) {
+		if (!scroller) return;
+		scroller.viewport.validateNow();
+		if (isBottom) {
+			if (scroller.viewport.contentHeight > scroller.height) {
+				scroller.viewport.scrollV = scroller.viewport.contentHeight - scroller.height;
+			} else {
+				scroller.viewport.scrollV = 0;
+			}
+		} else {
+			if (scroller.viewport.contentWidth > scroller.width) {
+				scroller.viewport.scrollH = scroller.viewport.contentWidth - scroller.width;
+			} else {
+				scroller.viewport.scrollH = 0;
+			}
+		}
+	}
 }
