@@ -71,8 +71,12 @@ module pili {
 				}
 			}
 		}
-
-		public static toFixed(num, fix):string{
+		/**
+		 * 将数字保留小数位,多余的数字丢弃，如6.17=>6.1
+		 * @param {number} num 要转换的值
+		 * @param {number} fix 保留几位小数，默认1位
+		 */
+		public static toFixed(num, fix=1):string{
 			let strNum = num+"";
 			if (fix == 0) {
 				strNum = strNum.split('.')[0];
